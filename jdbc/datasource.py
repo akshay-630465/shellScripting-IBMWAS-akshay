@@ -1,0 +1,2 @@
+AdminTask.createDatasource('rajeev(cells/swasCell02|resources.xml#JDBCProvider_1714134988406)', '[-name rajeev -jndiName rajeev -dataStoreHelperClassName com.ibm.websphere.rsadapter.DB2UniversalDataStoreHelper -containerManagedPersistence true -componentManagedAuthenticationAlias  -configureResourceProperties [[databaseName java.lang.String rajeev] [driverType java.lang.Integer 4] [serverName java.lang.String rajeev] [portNumber java.lang.Integer 1000]]]')
+AdminConfig.save()
