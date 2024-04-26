@@ -1,0 +1,3 @@
+AdminApp.install('/was9/SendJmsMessageEar.ear', '[ -nopreCompileJSPs -distributeApp -nouseMetaDataFromBinary -nodeployejb -appname SendJmsMessageEar -createMBeansForResources -noreloadEnabled -nodeployws -validateinstall warn -noprocessEmbeddedConfig -filepermission .*\.dll=755#.*\.so=755#.*\.a=755#.*\.sl=755 -noallowDispatchRemoteInclude -noallowServiceRemoteInclude -asyncRequestDispatchType DISABLED -nouseAutoLink -noenableClientModule -clientMode isolated -novalidateSchema -MapModulesToServers [[ SendJmsMessage SendJmsMessage.war,WEB-INF/web.xml WebSphere:cell=swasCell02,cluster=cluster_name5 ]] -MapWebModToVH [[ SendJmsMessage SendJmsMessage.war,WEB-INF/web.xml default_host ]]]' )
+AdminConfig.save()
+AdminConfig.reset()
