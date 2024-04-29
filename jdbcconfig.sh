@@ -21,7 +21,48 @@ echo "${userProvider}"
 if [[ ${userProvider} == "n" ]];then
 	echo "Creation of JDBC provider"
 	read -p "Enter DB type [DB2,ORACLE,sqlserver] :" db
-	read -p "Enter provider type (DB2 Universal JDBC Driver Provider/Oracle JDBC Driver):" providerType
+	db="${db^^}"
+	if [ $db == "DB2" ];then
+		echo "Please select the provider Type from below list: "
+		echo "1. DB2 Universal JDBC Driver Provider "
+		echo "2. DB2 UDB for iSeries (Toolbox) "
+		echo "3. DB2 UDB for iSeries (Native) "
+		read -p "Enter the option number eg:1 " providerType
+		case $providerType in
+			 1)
+      				 providerType="DB2 Universal JDBC Driver Provider"
+       	 			 ;;
+   			 2)
+       				 providerType="DB2 UDB for iSeries (Toolbox)"
+       				 ;;
+   			 3)
+       				 providerType="DB2 UDB for iSeries (Native)"
+       				 ;;
+   			 *)
+				echo "Please provide the provider Type"
+				;;
+		esac
+	fi
+	echo "You have selected provider type as  ${providerType}"
+
+	if [ $db == "ORACLE" ];then
+		 echo "Please select the provider Type from below list: "
+		 echo "1. Oracle JDBC Driver "
+		 echo "2. Oracle JDBC Driver UCP "
+		 read -p "Enter the option number eg:1 " providerType
+                 case $providerType in
+                         1)
+                                 providerType="Oracle JDBC Driver"
+                                 ;;
+                         2)
+                                 providerType= "Oracle JDBC Driver UCP"
+                                 ;;      
+                         *)
+                                echo "Please provide the provider Type"
+                                ;;
+                esac
+        fi
+
 	read -p "Implementation Type \n Connection pool data source \n XA data source :" implType
 	read -p "Enter name for provider :" name
 	read -p "path for the drivers:" driver
@@ -29,6 +70,7 @@ if [[ ${userProvider} == "n" ]];then
 	echo "AdminTask.createJDBCProvider('[-scope Cell=swasCell02 -databaseType "${db}" -providerType \"${providerType}\" -implementationType \"${implType}\" -name \"${name}\" -classpath \"${driver}\"]')" > ./jdbc/Newproviders.py
 	echo "AdminConfig.save()" >> ./jdbc/Newproviders.py
 	echo "AdminConfig.reset()" >> ./jdbc/Newproviders.py
+	echo "Making connection to scripting tool"
 	./connectWsadmin.sh -path ./jdbc/Newproviders.py
 	echo "JBBC provider is scuessfully created"
 
