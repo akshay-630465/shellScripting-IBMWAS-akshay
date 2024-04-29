@@ -1,0 +1,10 @@
+WASX7209I: Connected to process "dmgr" on node swasCellManager02 using SOAP connector;  The type of process is: DeploymentManager
+[[alias swasCellManager02/sdfsd] [userId dsfsd] [description sdf] [_Websphere_Config_Data_Id cells/swasCell02|security.xml#JAASAuthData_1714043410247] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
+[[alias swasCellManager02/name_alias] [userId db2inst1] [description ] [_Websphere_Config_Data_Id cells/swasCell02|security.xml#JAASAuthData_1714382587798] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
+[[alias swasCellManager02/alia] [userId alia] [description ] [_Websphere_Config_Data_Id cells/swasCell02|security.xml#JAASAuthData_1714382669510] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
+[[alias swasCellManager02/snehith] [userId snehith] [description ] [_Websphere_Config_Data_Id cells/swasCell02|security.xml#JAASAuthData_1714384058403] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
+[[alias swasCellManager02/rajeev] [userId rajeev] [description ] [_Websphere_Config_Data_Id cells/swasCell02|security.xml#JAASAuthData_1714384325527] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
+[[alias swasCellManager02/rakesh] [userId rakesh] [description ] [_Websphere_Config_Data_Id cells/swasCell02|security.xml#JAASAuthData_1714384603481] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
+[[alias swasCellManager02/akshay] [userId akshay] [description ] [_Websphere_Config_Data_Id cells/swasCell02|security.xml#JAASAuthData_1714384800491] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
+[[alias swasCellManager02/udhay] [userId udhat] [description ] [_Websphere_Config_Data_Id cells/swasCell02|security.xml#JAASAuthData_1714385555170] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
+[[alias swasCellManager02/pro_name] [userId db2inst1] [description ] [_Websphere_Config_Data_Id cells/swasCell02|security.xml#JAASAuthData_1714395672287] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]

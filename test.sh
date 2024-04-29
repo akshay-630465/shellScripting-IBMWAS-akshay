@@ -7,10 +7,11 @@ else
 echo "yes"
 fi
 
-echo "$0"
-echo "$1"
-read -p "hostname " host
-read -p "port " port
-telnet $host $port
+#echo "$0"
+#echo "$1"
+#read -p "hostname " host
+#read -p "port " port
+#telnet $host $port
 echo $?
-
+./connectWsadmin.sh -path ./jdbc/datasource.py 
+echo $?

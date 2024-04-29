@@ -1,0 +1,4 @@
+WASX7209I: Connected to process "dmgr" on node swasCellManager02 using SOAP connector;  The type of process is: DeploymentManager
+WASX7017E: Exception received while running file "./jdbc/datasource.py"; exception information: com.ibm.websphere.management.cmdframework.CommandException
+com.ibm.websphere.management.exception.ConfigServiceException: ADMG0037E: A new instance of the DataSource object cannot be created because the jndiName attribute of an existing DataSource object has the same value as jndi/ds-4.
+
