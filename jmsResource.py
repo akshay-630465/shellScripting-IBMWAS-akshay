@@ -1,0 +1,3 @@
+AdminTask.createSIBJMSConnectionFactory('swasCell02(cells/swasCell02|cell.xml)', '[-type queue -name queueuue -jndiName jndi/quququ -description -category -busName bus-mem-3 -nonPersistentMapping ExpressNonPersistent -readAhead Default -tempQueueNamePrefix -target -targetType BusMember -targetSignificance Preferred -targetTransportChain -providerEndPoints -connectionProximity Bus -authDataAlias -containerAuthAlias -mappingAlias -shareDataSourceWithCMP false -logMissingTransactionContext false -manageCachedHandles false -xaRecoveryAuthAlias -persistentMapping ReliablePersistent -consumerDoesNotModifyPayloadAfterGet false -producerDoesNotModifyPayloadAfterSet false]')
+AdminConfig.save()
+AdminConfig.reset()
