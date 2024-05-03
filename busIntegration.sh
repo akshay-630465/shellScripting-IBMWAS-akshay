@@ -24,7 +24,14 @@ echo "AdminConfig.save()" >> ./jms/busCreation.py
 echo "AdminConfig.reset()" >> ./jms/busCreation.py
 #echo "print(AdminTask.listSIBuses())" >> ./jms/busCreation.py
 #echo "exit" >> busCreation.py
-./connectWsadmin.sh -path ./jms/busCreation.py
+
+echo "give details for connecting wsadmin scripts "
+read -p "Enter the hostname " scriptHostName
+read -p "Enter the soap port of dmgr: " dmgrSoapPort
+read -p "Enter the username: " AdminName
+read -p "Enter the password: " -s adminPassword
+
+./updatedConnectWsadmin.sh -path ./jms/busCreation.py "${scriptHostName}" "${dmgrSoapPort}" "${AdminName}" "${adminPassword}"
 
 
 
@@ -36,7 +43,7 @@ busMemberType="${busMemeberType^^}"
 if [ "{$busMemberType}" == "SERVER" ]
 then
 	echo "print(AdminTask.listServers())" > ./jms/clus_ser.py
-	./connectWsadmin.sh -path ./jms/clus_ser.py
+	./updatedConnectWsadmin.sh -path ./jms/clus_ser.py "${scriptHostName}" "${dmgrSoapPort}" "${AdminName}" "${adminPassword}"
 	read -p "Enter the server name: " serverName
 	read -p "Enter the node name on  which the server is created: " nodeName
 	echo "AdminTask.addSIBusMember('[-bus $busName -node $nodeName -server $serverName -fileStore -logSize 100 -minPermanentStoreSize 200 -maxPermanentStoreSize 500 -unlimitedPermanentStoreSize false -minTemporaryStoreSize 200 -maxTemporaryStoreSize 500 -unlimitedTemporaryStoreSize false ]')" > ./jms/busMembers.py
@@ -44,7 +51,7 @@ then
 else 
 #Bus member type is cluster
 	echo "print(AdminConfig.list('ServerCluster', AdminConfig.getid( '/Cell:swasCell02/')))" > ./jms/clus_ser.py
-	./connectWsadmin.sh -path ./jms/clus_ser.py
+	./updatedConnectWsadmin.sh -path ./jms/clus_ser.py "${scriptHostName}" "${dmgrSoapPort}" "${AdminName}" "${adminPassword}"
 	read -p "Enter the name of the cluster: " clusterName
 	read -p "Enter the log directory path for file store: " logDirectoryPath
 	read -p "Enter the path for permanent store directory: " permanentStoreDirectory
@@ -57,4 +64,4 @@ echo "AdminTask.listSIBusMembers('[-bus $busName ]')" >> ./jms/busMembers.py
 echo "AdminConfig.save()" >> ./jms/busMembers.py
 echo "AdminConfig.reset()" >> ./jms/busMembers.py
 
-./connectWsadmin.sh -path ./jms/busMembers.py
+./updatedConnectWsadmin.sh -path ./jms/busMembers.py "${scriptHostName}" "${dmgrSoapPort}" "${AdminName}" "${adminPassword}"

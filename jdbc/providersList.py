@@ -1,1 +1,1 @@
-print(AdminConfig.list('JDBCProvider', AdminConfig.getid( '/Cell:swasCell02/')))
+print(AdminConfig.list('JDBCProvider', AdminConfig.getid('/Cell:swasCell03/')))

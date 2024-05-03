@@ -1,24 +1,26 @@
-name=input("Enter the name of the cluster: ")
+name=input("Enter the name of the cluster {provide in string format}: ")
 AdminTask.createCluster("[-clusterConfig [-clusterName {} -preferLocal true]]".format(name))
 AdminConfig.save()
 print("Suceesfully cluster created")
 noOfServers=int(input("Enter no of servers you want to add: "))
 for i in range(0,noOfServers):
-    serverName=input("Enter the member name: ")
+    serverName=input("Enter the member name for server number - {}: ".format(i+1))
     print("In which node you want to add the member {} from below available nodes: ".format(serverName))
     print(AdminTask.listNodes())
-    nodeName=input("Select the node name: ")
+    nodeName=input("Select the node name (STRING FORMAT): ")
     if(i==0):
        print(AdminTask.createClusterMember("[-clusterName {} -memberConfig [-memberNode {} -memberName {} -memberWeight 2 -genUniquePorts true -replicatorEntry false] -firstMember [-templateName default -nodeGroup DefaultNodeGroup -coreGroup DefaultCoreGroup -resourcesScope cluster]]".format(name,nodeName,serverName)))
        AdminConfig.save()
+       print("successfully memeber is created and added")
     else:
         print(AdminTask.createClusterMember("[-clusterName {} -memberConfig [-memberNode {} -memberName {} -memberWeight 2 -genUniquePorts true -replicatorEntry false]]".format(name,nodeName,serverName)))  
-    	AdminConfig.save()
+        AdminConfig.save()
+	print("successfully memeber is created and added")
 
-print("Do you want the all servers on the cluster {}".format(name))
+print("Do you want the all servers on the cluster {} to get started ".format(name))
 serStarting=input("YES/NO")
 if(serStarting.upper() == "YES"):
-    
+    print("AdminClusterManagement.startSingleCluster({})".format(name))
 
 
 

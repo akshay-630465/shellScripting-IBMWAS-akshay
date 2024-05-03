@@ -13,5 +13,35 @@ fi
 #read -p "port " port
 #telnet $host $port
 echo $?
-./connectWsadmin.sh -path ./jdbc/datasource.py 
+#./connectWsadmin.sh -path ./jdbc/datasource.py 
 echo $?
+
+
+
+
+
+read -p "Select the scope(cell/node/cluster):" scopeCF
+scopeCF="${scopeCF,,}"
+scope=""
+cellName=swascell03
+if [ $scopeCF == 'cell' ];
+then
+        scope="Cell="${cellName}""
+        echo $scope
+fi
+if [ $scopeCF == 'cluster' ]
+then
+        read -p "Enter the cluster name: " clusterName
+        scope="Cluster="${clusterName}""
+        echo $scope
+
+fi
+
+if [ $scopeCF == "node" ];
+then
+        read -p "Enter the server name: " serverName
+        read -p "Enter the node name: " nodeName
+        scope="Node="${nodeName}",Server="${serverName}""
+        echo $scope
+
+fi

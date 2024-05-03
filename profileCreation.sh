@@ -16,10 +16,13 @@ if [[ "$security" == "y" ]]
 then
 	read -p "Enter admin username :" adminUserName
 	read -p "Enter admin password :" adminPassword
-	echo "{WAS_HOME}/bin/manageprofiles.sh -create -templatePath ../profileTemplates/${profileType}/ -enableAdminSecurity true -adminUserName "${adminUserName}" -adminPassword "${adminPassword}" -hostName "${hostname}""
-
+	${WAS_HOME}/bin/manageprofiles.sh -create -profileName "${profileName}" -templatePath ../profileTemplates/${profileType}/ -enableAdminSecurity true -adminUserName "${adminUserName}" -adminPassword "${adminPassword}" -hostName "${hostname}"
+	if [ $? == 0 ];
+	then
+		echo "profile Creation is successfully completed"
+	fi
 else 
-	echo "{WAS_HOME}/bin/manageprofiles.sh -create -templatePath ../profileTemplates/${profileType}/ -hostName "${hostname}""
+	${WAS_HOME}/bin/manageprofiles.sh -create -profileName "${profileName}" -templatePath ../profileTemplates/${profileType}/ -hostName "${hostname}"
 fi
 ## updating the bash profile with profileName
 
@@ -34,7 +37,7 @@ if [ "${profileType}" == "dmgr" ]; then
 	. /was9/.bashrc
     fi
 elif [ "${profileType}" == "default" ]; then
-    if [ "${APP}" != "${profileName}"]; then
+    if [ "${APP}" != "${profileName}" ]; then
          sed -i "s/export DMGR=.*/export APP=${profileName}/" /was9/.bashrc
         . /was9/.bashrc
 	. /was9/.bashrc

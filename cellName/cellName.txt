@@ -1,0 +1,2 @@
+WASX7209I: Connected to process "dmgr" on node swasCellManager03 using SOAP connector;  The type of process is: DeploymentManager
+swasCell03

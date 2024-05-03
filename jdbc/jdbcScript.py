@@ -1,6 +1,6 @@
-AdminTask.createJDBCProvider('[-scope Cell=swasCell02 -databaseType DB2 -providerType "DB2 Universal JDBC Driver Provider" -implementationType "Connection pool data source" -name "pro-44" -classpath "/was9"]')
+AdminTask.createJDBCProvider('[-scope "Cluster=cluster-1" -databaseType "DB2" -providerType "DB2 Universal JDBC Driver Provider" -implementationType "Connection pool data source" -name "vairaj" -classpath "/was9/db2jcc.jar /was9/db2jcc_license_cu.jar"]')
 AdminConfig.save()
 AdminConfig.reset()
-AdminTask.createAuthDataEntry('[-alias pro_name -user db2inst1 -password sarasu10  ]')
+AdminTask.createAuthDataEntry('[-alias vairaj -user db2inst1 -password sarasu10  ]')
 AdminConfig.save()
 AdminConfig.reset()
