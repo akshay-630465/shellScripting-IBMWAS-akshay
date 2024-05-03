@@ -1,3 +1,0 @@
-AdminTask.createSIBJMSConnectionFactory('cluster-new(cells/swasCell02/clusters/cluster-new|cluster.xml)', '[-type queue -name clunnn -jndiName jndi/clunn -description -category -busName newbus -nonPersistentMapping ExpressNonPersistent -readAhead Default -tempQueueNamePrefix -target -targetType BusMember -targetSignificance Preferred -targetTransportChain -providerEndPoints -connectionProximity Bus -authDataAlias -containerAuthAlias -mappingAlias -shareDataSourceWithCMP false -logMissingTransactionContext false -manageCachedHandles false -xaRecoveryAuthAlias -persistentMapping ReliablePersistent -consumerDoesNotModifyPayloadAfterGet false -producerDoesNotModifyPayloadAfterSet false]')
-AdminConfig.save()
-AdminConfig.reset()

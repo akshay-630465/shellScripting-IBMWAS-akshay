@@ -1,6 +1,0 @@
-WASX7209I: Connected to process "dmgr" on node swasCellManager03 using SOAP connector;  The type of process is: DeploymentManager
-[[alias swasCellManager03/db2auth] [userId db2inst1] [description ] [_Websphere_Config_Data_Id cells/swasCell03|security.xml#JAASAuthData_1714634172637] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
-[[alias swasCellManager03/clusauth] [userId db2inst1] [description ] [_Websphere_Config_Data_Id cells/swasCell03|security.xml#JAASAuthData_1714640190875] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
-[[alias swasCellManager03/auth] [userId db2inst1] [description ] [_Websphere_Config_Data_Id cells/swasCell03|security.xml#JAASAuthData_1714647146996] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
-[[alias swasCellManager03/raj-vaish] [userId db2inst1] [description ] [_Websphere_Config_Data_Id cells/swasCell03|security.xml#JAASAuthData_1714720088718] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
-[[alias swasCellManager03/vairaj] [userId db2inst1] [description ] [_Websphere_Config_Data_Id cells/swasCell03|security.xml#JAASAuthData_1714720259499] [_Websphere_Config_Data_Type JAASAuthData] [password *******] ]
