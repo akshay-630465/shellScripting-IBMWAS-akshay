@@ -7,6 +7,7 @@ else
 echo "yes"
 fi
 
+<<<<<<< HEAD
 #echo "$0"
 #echo "$1"
 #read -p "hostname " host
@@ -45,3 +46,12 @@ then
         echo $scope
 
 fi
+=======
+echo "$0"
+echo "$1"
+read -p "hostname " host
+read -p "port " port
+telnet $host $port
+echo $?
+
+>>>>>>> f24ab0271fc24fe8b65d6b55ab3ee758488ddd6c
